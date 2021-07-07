@@ -14,7 +14,7 @@ void loop()
     if (lora.available())
     {
         digitalWrite(pin, HIGH);
-        Serial.println(lora.parseData());
+        Serial.println(lora.readString());
         digitalWrite(pin, LOW);
     }
 }

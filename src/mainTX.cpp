@@ -80,7 +80,10 @@ int mainFunc(bool gpsEnabled)
 
     // send data via lora
     if (millis() > (_lastSend + (INTERVAL_SEC * 1000)))
+    {
         lora.sendData(speed, 0, vAux, 0, 0);
 
+        _lastSend = millis();
+    }
     return 0;
 }
