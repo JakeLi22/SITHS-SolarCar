@@ -35,6 +35,8 @@ void loop()
         if (gpsSerial.GPSencode())
             mainFunc(true);
     // if gps is missing / not encoding stuff
+    //#TODO: maybe you want to have a timeout and then a retry instead of 
+    // turining the entire system off until reset with a while true loop
     if (millis() > 5000 && gpsSerial.gps.charsProcessed() < 10)
         while (true)
             mainFunc(false);
@@ -43,6 +45,7 @@ void loop()
 int mainFunc(bool gpsEnabled)
 {
     // measure aux voltage (arduino's own voltage)
+    // if bandwidth is a concern you can get away with a 32 bit float
     double vAux = (double)analogRead(A0) * (V_REF / 1023.0) * VDIV_RATIO;
     // Serial.println(vAux);
 
