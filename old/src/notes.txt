@@ -1,0 +1,3 @@
+At the top of every file should be a textual description of what the code in that file does
+@Richard you are not the only one looking at the code, when you write it every function should have 
+an extensive docstring and you should walk at least one other person through the code

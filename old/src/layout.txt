@@ -1,0 +1,6 @@
+Use this to lay out your code so that someone unfamiliar with it can het acquanted with at least the architecture
+
+mainRX.cpp:
+    main event loop for writing to the data pin when the lora transmitter is available
+
+    initialize the baud rate for both the arduino and the lora transmitter
